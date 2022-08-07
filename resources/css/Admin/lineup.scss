@@ -1,0 +1,71 @@
+@import '../colors.scss';
+
+.band-list{
+    display: flex;
+    flex-direction: column;
+    h2 {
+        padding: 0.5rem;
+    }
+
+    .band-list--content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .band-list--inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea, select{
+            width: 10rem;
+            height: 2.6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: $input_background;
+            padding: .75rem 1rem;
+            border-radius: .25rem;
+            border: 1px solid transparent;
+            margin-right: 0.5rem;
+            }
+
+        input:hover, textarea:hover, select:hover  {
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        .up_del_btns {
+            display: flex;
+            align-self: flex-end;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            
+
+            .up_btn {
+                background-color: $add_btn;
+                margin-right: 0.5rem;
+            }
+
+            .del_btn {
+                background-color: $remove_btn;
+                margin-left: 0.5rem;
+            }
+
+            button {
+                width: 4.5rem;
+                height: 2.6rem;
+                margin-top: 0.65rem;
+                margin-bottom: 0.5rem;
+                border-radius: .25rem;
+                color: $font_color_btn;
+                font-weight: bold;
+                border: 1px solid transparent;
+            }
+
+            button:hover {
+                cursor: pointer;
+                border: 2px solid black;
+            }
+        }
+    }
+}

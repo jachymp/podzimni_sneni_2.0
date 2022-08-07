@@ -1,0 +1,172 @@
+.detail-section {
+    margin: 1rem;
+
+    h2 {
+        padding: 0.5rem;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+
+        .detail-section--form {
+            display: grid;
+            grid-template-columns: 10rem 10rem;
+            grid-template-rows: 2.6rem 2.6rem 2.6rem 2.6rem 2.6rem 8rem;
+            grid-gap: 0.5rem;
+            padding-bottom: 1rem;
+            grid-template-areas: 
+                        "year grade"
+                        "from to"
+                        "fr-nrm fr-std"
+                        "sr-nrm sr-std"
+                        "all-nrm all-std"
+                        "desc desc";
+
+            .detail-section--inputs {
+                display: flex;
+                flex-direction: column;
+                
+                label {
+                    padding-bottom: 0.2rem;
+                }
+            }
+
+            input, textarea {
+                background: $input_background;
+                padding: .75rem 1rem;
+                border-radius: .25rem;
+                border: 1px solid transparent;
+            }
+
+            input:hover, textarea:hover  {
+                cursor: pointer;
+                border: 2px solid black;
+            }
+            
+        }
+
+        .detail-section--btn {
+            display: flex;
+            width: 20rem;
+
+            button {
+                width: 10rem;
+                height: 2.6rem;
+                border-radius: .25rem;
+                color: $font_color_btn;
+                font-weight: bold;
+                border: 1px solid transparent;
+                background-color: $save_btn;
+            }
+
+            button:hover {
+                cursor: pointer;
+                border: 2px solid black;
+            }
+        }
+
+        .year {
+            grid-area: year;
+        }
+
+        .grade {
+            grid-area: grade;
+        }
+
+        .from {
+            grid-area: from;
+        }
+
+        .to {
+            grid-area: to;
+        }
+
+        .fr-nrm {
+            grid-area: fr-nrm;
+        }
+
+        .fr-std {
+            grid-area: fr-std;
+        }
+
+        .sr-nrm {
+            grid-area: sr-nrm;
+        }
+
+        .sr-std {
+            grid-area: sr-std;
+        }
+
+        .all-nrm {
+            grid-area: all-nrm;
+        }
+
+        .all-std {
+            grid-area: all-std;
+        }
+
+        .desc {
+            grid-area: desc;
+        }
+
+
+            // display: grid;
+            // width: 20%;
+            // grid-template-columns: 10rem 10rem 10rem;
+            //     grid-template-rows: 2.6rem 2.6rem  4rem;
+            //     grid-gap: 0.5rem;
+            //     justify-content: stretch;
+            // flex-direction: column;
+            // width: 100%;
+
+            // button {
+            //     width: 33%;
+            //     height: 2rem;
+            //     margin-top: 0.5rem;
+            //     margin-bottom: 0.5rem;
+            //     border-radius: 0.5rem;
+            //     border:0.16em solid rgba(255,255,255,0);
+            //     background-color: rgb(209, 118, 118);
+            // }
+
+            // button:hover {
+            //     cursor: pointer;
+            //     border-color: rgba(0, 0, 0, 0.575);
+                
+            // }
+
+            // li {
+            //     display: flex;
+            //     width: 33%;
+            //     justify-content: space-between;
+
+            //     input, textarea {
+            //         margin-top: 0.5rem;
+            //         margin-bottom: 0.5rem;
+            //         height: 2rem;
+            //         width: 10rem;
+            //         border-radius: 0.5rem;
+            //         border: 0.1em solid rgba(255,255,255,0);
+            //     }
+
+            //     input:hover {
+            //         cursor: pointer;
+            //         border-color: rgba(0, 0, 0, 0.575);
+
+            //     }
+
+            //     textarea:hover {
+            //         cursor: pointer;
+            //         border-color: rgba(0, 0, 0, 0.575);
+            //     }
+            
+            //     label {
+            //         margin-right: 2rem;
+            //         align-self: center;
+            //         font-weight: bold;
+            //     }
+            // }
+    }       
+}

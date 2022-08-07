@@ -1,0 +1,116 @@
+@import '../colors.scss';
+
+.band-add {
+    margin: 1rem;
+    h2 {
+        padding: 0.5rem;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+
+        .band-add--form {
+                display: grid;
+                grid-template-columns: 10rem 10rem;
+                margin-bottom: 1rem;
+                grid-template-rows: 2.6rem 2.6rem 2.6rem 2.6rem 4rem 2.6rem;
+                grid-gap: 0.5rem;
+                grid-template-areas: 
+                    "name name"
+                    "stage date"
+                    "time_from time_to"
+                    "link link"
+                    "desc desc"
+                    "remove-btn .";
+
+                    input, textarea, select {
+                        background: $input_background;
+                        padding: .75rem 1rem;
+                        border-radius: .25rem;
+                        border: 1px solid transparent;
+                    }
+
+                    input:hover, textarea:hover,select:hover  {
+                        cursor: pointer;
+                        border: 2px solid black;
+                    }
+        
+            .remove-btn {
+                width: 10rem;
+                height: 2.6rem;
+                padding: .75rem 1rem;
+                border-radius: .25rem;
+                background-color: $remove_btn;
+                color: $font_color_btn;
+                font-weight: bold;
+                border: 1px solid transparent;
+            }
+
+            button:hover {
+                cursor: pointer;
+                border: 2px solid black;
+            }
+            
+            .name {
+                grid-area: name;
+            }
+
+            .stage {
+                grid-area: stage;
+            }
+
+            .date {
+                grid-area: date;
+            }
+            
+            .time_from {
+                grid-area: time_from;
+            }
+
+            .time_to {
+                grid-area: time_to;
+            }
+
+            .link {
+                grid-area: link;
+            }
+
+            .desc {
+                grid-area: desc;
+            }
+
+            .remove-btn {
+                grid-area: remove-btn;
+            }
+        }
+
+        .band-add--btn{
+            display: grid;
+            grid-template-columns: 10rem 10rem;
+            grid-template-rows: 2.6rem;
+            grid-gap: 0.5rem;
+            justify-content: stretch;
+
+            button {
+                border-radius: .25rem;
+                color: $font_color_btn;
+                font-weight: bold;
+                border: 1px solid transparent;
+            }
+
+            button:hover {
+                cursor: pointer;
+                border: 2px solid black;
+            }
+
+            .add-btn {
+                    background-color: $add_btn;
+            }
+
+            .submit-btn {
+                    background-color: $save_btn;
+            }
+        }
+    }
+}

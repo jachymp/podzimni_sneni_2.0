@@ -1,0 +1,646 @@
+.band-list {
+  display: flex;
+  flex-direction: column;
+}
+.band-list h2 {
+  padding: 0.5rem;
+}
+.band-list .band-list--content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.band-list .band-list--content .band-list--inputs {
+  display: flex;
+  flex-direction: column;
+}
+.band-list .band-list--content input, .band-list .band-list--content textarea, .band-list .band-list--content select {
+  width: 10rem;
+  height: 2.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: hsl(0deg, 0%, 93%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  margin-right: 0.5rem;
+}
+.band-list .band-list--content input:hover, .band-list .band-list--content textarea:hover, .band-list .band-list--content select:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.band-list .band-list--content .up_del_btns {
+  display: flex;
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.band-list .band-list--content .up_del_btns .up_btn {
+  background-color: cadetblue;
+  margin-right: 0.5rem;
+}
+.band-list .band-list--content .up_del_btns .del_btn {
+  background-color: rgb(192, 24, 24);
+  margin-left: 0.5rem;
+}
+.band-list .band-list--content .up_del_btns button {
+  width: 4.5rem;
+  height: 2.6rem;
+  margin-top: 0.65rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+.band-list .band-list--content .up_del_btns button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.detail-section {
+  margin: 1rem;
+}
+.detail-section h2 {
+  padding: 0.5rem;
+}
+.detail-section form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.detail-section form .detail-section--form {
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: 2.6rem 2.6rem 2.6rem 2.6rem 2.6rem 8rem;
+  grid-gap: 0.5rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "year grade" "from to" "fr-nrm fr-std" "sr-nrm sr-std" "all-nrm all-std" "desc desc";
+}
+.detail-section form .detail-section--form .detail-section--inputs {
+  display: flex;
+  flex-direction: column;
+}
+.detail-section form .detail-section--form .detail-section--inputs label {
+  padding-bottom: 0.2rem;
+}
+.detail-section form .detail-section--form input, .detail-section form .detail-section--form textarea {
+  background: hsl(0deg, 0%, 93%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+.detail-section form .detail-section--form input:hover, .detail-section form .detail-section--form textarea:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.detail-section form .detail-section--btn {
+  display: flex;
+  width: 20rem;
+}
+.detail-section form .detail-section--btn button {
+  width: 10rem;
+  height: 2.6rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+  background-color: rgb(14, 89, 92);
+}
+.detail-section form .detail-section--btn button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.detail-section form .year {
+  grid-area: year;
+}
+.detail-section form .grade {
+  grid-area: grade;
+}
+.detail-section form .from {
+  grid-area: from;
+}
+.detail-section form .to {
+  grid-area: to;
+}
+.detail-section form .fr-nrm {
+  grid-area: fr-nrm;
+}
+.detail-section form .fr-std {
+  grid-area: fr-std;
+}
+.detail-section form .sr-nrm {
+  grid-area: sr-nrm;
+}
+.detail-section form .sr-std {
+  grid-area: sr-std;
+}
+.detail-section form .all-nrm {
+  grid-area: all-nrm;
+}
+.detail-section form .all-std {
+  grid-area: all-std;
+}
+.detail-section form .desc {
+  grid-area: desc;
+}
+
+.band-add {
+  margin: 1rem;
+}
+.band-add h2 {
+  padding: 0.5rem;
+}
+.band-add form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.band-add form .band-add--form {
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+  margin-bottom: 1rem;
+  grid-template-rows: 2.6rem 2.6rem 2.6rem 2.6rem 4rem 2.6rem;
+  grid-gap: 0.5rem;
+  grid-template-areas: "name name" "stage date" "time_from time_to" "link link" "desc desc" "remove-btn .";
+}
+.band-add form .band-add--form input, .band-add form .band-add--form textarea, .band-add form .band-add--form select {
+  background: hsl(0deg, 0%, 93%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+.band-add form .band-add--form input:hover, .band-add form .band-add--form textarea:hover, .band-add form .band-add--form select:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.band-add form .band-add--form .remove-btn {
+  width: 10rem;
+  height: 2.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  background-color: rgb(192, 24, 24);
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+.band-add form .band-add--form button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.band-add form .band-add--form .name {
+  grid-area: name;
+}
+.band-add form .band-add--form .stage {
+  grid-area: stage;
+}
+.band-add form .band-add--form .date {
+  grid-area: date;
+}
+.band-add form .band-add--form .time_from {
+  grid-area: time_from;
+}
+.band-add form .band-add--form .time_to {
+  grid-area: time_to;
+}
+.band-add form .band-add--form .link {
+  grid-area: link;
+}
+.band-add form .band-add--form .desc {
+  grid-area: desc;
+}
+.band-add form .band-add--form .remove-btn {
+  grid-area: remove-btn;
+}
+.band-add form .band-add--btn {
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: 2.6rem;
+  grid-gap: 0.5rem;
+  justify-content: stretch;
+}
+.band-add form .band-add--btn button {
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+.band-add form .band-add--btn button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.band-add form .band-add--btn .add-btn {
+  background-color: cadetblue;
+}
+.band-add form .band-add--btn .submit-btn {
+  background-color: rgb(14, 89, 92);
+}
+
+.new-year {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.new-year h2 {
+  padding: 0.5rem;
+}
+.new-year .success {
+  width: 33%;
+  background-color: rgb(102, 163, 102);
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  font-weight: bold;
+}
+.new-year .fail {
+  width: 33%;
+  background-color: rgb(216, 88, 88);
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  font-weight: bold;
+}
+.new-year form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.new-year form .new-year--form {
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: 2.6rem 2.6rem 2.6rem 2.6rem 2.6rem 8rem;
+  grid-gap: 0.5rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "year grade" "from to" "fr-nrm fr-std" "sr-nrm sr-std" "all-nrm all-std" "desc desc";
+}
+.new-year form .new-year--form input, .new-year form .new-year--form textarea {
+  background: hsl(0deg, 0%, 93%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+.new-year form .new-year--form input:hover, .new-year form .new-year--form textarea:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.new-year form .save-btn {
+  display: flex;
+  width: 20rem;
+}
+.new-year form .save-btn button {
+  width: 10rem;
+  height: 2.6rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+  background-color: rgb(14, 89, 92);
+  margin-top: 1.7rem;
+}
+.new-year form .save-btn button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.new-year form .year {
+  grid-area: year;
+}
+.new-year form .grade {
+  grid-area: grade;
+}
+.new-year form .from {
+  grid-area: from;
+}
+.new-year form .to {
+  grid-area: to;
+}
+.new-year form .fr-nrm {
+  grid-area: fr-nrm;
+}
+.new-year form .fr-std {
+  grid-area: fr-std;
+}
+.new-year form .sr-nrm {
+  grid-area: sr-nrm;
+}
+.new-year form .sr-std {
+  grid-area: sr-std;
+}
+.new-year form .all-nrm {
+  grid-area: all-nrm;
+}
+.new-year form .all-std {
+  grid-area: all-std;
+}
+.new-year form .desc {
+  grid-area: desc;
+}
+
+.content-container {
+  background-color: #212121;
+}
+
+.fest-description-container {
+  color: #e1ddd6;
+  text-align: center;
+}
+.fest-description-container .fest-description {
+  margin: 1rem;
+}
+.fest-description-container .fest-description p {
+  font-size: 1.2rem;
+}
+.fest-description-container .description-dates-container {
+  display: flex;
+  justify-content: center;
+}
+.fest-description-container .description-dates-container p {
+  padding: 0rem 0.2rem 0rem 0.2rem;
+  font-size: 1.2rem;
+}
+.fest-description-container #description-prices {
+  padding: 1rem;
+}
+.fest-description-container #description-prices .description-price-container {
+  display: grid;
+  grid-template-columns: 4rem 5rem 5rem;
+  grid-template-rows: 1.4rem 1.4rem 1.4rem 1.4rem;
+  justify-content: center;
+  padding: 1rem;
+  grid-template-areas: ". norm std" "fr fr-norm fr-std" "st st-norm st-std" "all all-norm all-std";
+}
+.fest-description-container #description-prices .description-price-container h4, .fest-description-container #description-prices .description-price-container p {
+  padding: 0.2rem;
+  text-align: left;
+}
+.fest-description-container #description-prices .description-price-container .price-head-norm {
+  grid-area: norm;
+  border-left: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-head-std {
+  grid-area: std;
+}
+.fest-description-container #description-prices .description-price-container .price-friday-head {
+  grid-area: fr;
+  border-top: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-friday-norm {
+  grid-area: fr-norm;
+  border-top: 1px #e1ddd6 solid;
+  border-left: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-friday-std {
+  grid-area: fr-std;
+  border-top: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-saturday-head {
+  grid-area: st;
+}
+.fest-description-container #description-prices .description-price-container .price-saturday-norm {
+  grid-area: st-norm;
+  border-left: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-saturday-std {
+  grid-area: st-std;
+}
+.fest-description-container #description-prices .description-price-container .price-all-head {
+  grid-area: all;
+}
+.fest-description-container #description-prices .description-price-container .price-all-norm {
+  grid-area: all-norm;
+  border-left: 1px #e1ddd6 solid;
+}
+.fest-description-container #description-prices .description-price-container .price-all-std {
+  grid-area: all-std;
+}
+
+.bands-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  color: #e1ddd6;
+  align-items: center;
+}
+.bands-section .band-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.bands-section .band-cards-container .band-card--heading {
+  display: flex;
+  flex-direction: row;
+  width: 20rem;
+  height: 5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: cadetblue;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bands-section .band-cards-container .band-card--heading p, .bands-section .band-cards-container .band-card--heading button, .bands-section .band-cards-container .band-card--heading img {
+  display: none;
+}
+.bands-section .band-cards-container .band-card--content {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: auto;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-align: center;
+  align-items: center;
+  color: black;
+  background-color: pink;
+  cursor: pointer;
+}
+.bands-section .band-cards-container .band-card--content h4 {
+  padding: 1rem;
+  font-weight: bold;
+}
+.bands-section .band-cards-container .band-card--content button {
+  width: 60%;
+  height: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: rgb(120, 221, 120);
+}
+.bands-section .band-cards-container .band-card--content button a {
+  text-decoration: none;
+  color: black;
+}
+.bands-section .band-cards-container .band-card--content button:hover {
+  border: 2px solid black;
+}
+.bands-section .band-cards-container .band-card--content .band-card-icons {
+  display: flex;
+  padding: 1rem;
+}
+.bands-section .band-cards-container .band-card--content .band-card-icons .band-card-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bands-section .band-cards-container .band-card--content .band-card-icons .band-card-icon img {
+  width: 25%;
+}
+
+.lineup-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: #212121;
+  color: #e1ddd6;
+}
+.lineup-container .lineup-friday,
+.lineup-container .lineup-saturday {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lineup-container .lineup-friday .lineup-friday-1, .lineup-container .lineup-friday .lineup-friday-2, .lineup-container .lineup-friday .lineup-friday-3,
+.lineup-container .lineup-friday .lineup-saturday-1, .lineup-container .lineup-friday .lineup-saturday-2, .lineup-container .lineup-friday .lineup-saturday-3,
+.lineup-container .lineup-saturday .lineup-friday-1,
+.lineup-container .lineup-saturday .lineup-friday-2,
+.lineup-container .lineup-saturday .lineup-friday-3,
+.lineup-container .lineup-saturday .lineup-saturday-1,
+.lineup-container .lineup-saturday .lineup-saturday-2,
+.lineup-container .lineup-saturday .lineup-saturday-3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.lineup-container .lineup-friday .lineup-friday-1 .lineup-band, .lineup-container .lineup-friday .lineup-friday-2 .lineup-band, .lineup-container .lineup-friday .lineup-friday-3 .lineup-band,
+.lineup-container .lineup-friday .lineup-saturday-1 .lineup-band, .lineup-container .lineup-friday .lineup-saturday-2 .lineup-band, .lineup-container .lineup-friday .lineup-saturday-3 .lineup-band,
+.lineup-container .lineup-saturday .lineup-friday-1 .lineup-band,
+.lineup-container .lineup-saturday .lineup-friday-2 .lineup-band,
+.lineup-container .lineup-saturday .lineup-friday-3 .lineup-band,
+.lineup-container .lineup-saturday .lineup-saturday-1 .lineup-band,
+.lineup-container .lineup-saturday .lineup-saturday-2 .lineup-band,
+.lineup-container .lineup-saturday .lineup-saturday-3 .lineup-band {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.lineup-container .lineup-friday .lineup-friday-1 .lineup-band p:nth-child(1), .lineup-container .lineup-friday .lineup-friday-2 .lineup-band p:nth-child(1), .lineup-container .lineup-friday .lineup-friday-3 .lineup-band p:nth-child(1),
+.lineup-container .lineup-friday .lineup-saturday-1 .lineup-band p:nth-child(1), .lineup-container .lineup-friday .lineup-saturday-2 .lineup-band p:nth-child(1), .lineup-container .lineup-friday .lineup-saturday-3 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-friday-1 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-friday-2 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-friday-3 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-saturday-1 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-saturday-2 .lineup-band p:nth-child(1),
+.lineup-container .lineup-saturday .lineup-saturday-3 .lineup-band p:nth-child(1) {
+  padding: 0.1rem;
+}
+.lineup-container .lineup-friday .lineup-friday-1 .lineup-band p:nth-child(2), .lineup-container .lineup-friday .lineup-friday-2 .lineup-band p:nth-child(2), .lineup-container .lineup-friday .lineup-friday-3 .lineup-band p:nth-child(2),
+.lineup-container .lineup-friday .lineup-saturday-1 .lineup-band p:nth-child(2), .lineup-container .lineup-friday .lineup-saturday-2 .lineup-band p:nth-child(2), .lineup-container .lineup-friday .lineup-saturday-3 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-friday-1 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-friday-2 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-friday-3 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-saturday-1 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-saturday-2 .lineup-band p:nth-child(2),
+.lineup-container .lineup-saturday .lineup-saturday-3 .lineup-band p:nth-child(2) {
+  padding: 0.1rem;
+}
+.lineup-container .lineup-friday .lineup-friday-1 .lineup-band p:nth-child(3), .lineup-container .lineup-friday .lineup-friday-2 .lineup-band p:nth-child(3), .lineup-container .lineup-friday .lineup-friday-3 .lineup-band p:nth-child(3),
+.lineup-container .lineup-friday .lineup-saturday-1 .lineup-band p:nth-child(3), .lineup-container .lineup-friday .lineup-saturday-2 .lineup-band p:nth-child(3), .lineup-container .lineup-friday .lineup-saturday-3 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-friday-1 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-friday-2 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-friday-3 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-saturday-1 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-saturday-2 .lineup-band p:nth-child(3),
+.lineup-container .lineup-saturday .lineup-saturday-3 .lineup-band p:nth-child(3) {
+  padding: 0.1rem;
+}
+.lineup-container .lineup-friday .lineup-friday-1 .lineup-band p:nth-child(4), .lineup-container .lineup-friday .lineup-friday-2 .lineup-band p:nth-child(4), .lineup-container .lineup-friday .lineup-friday-3 .lineup-band p:nth-child(4),
+.lineup-container .lineup-friday .lineup-saturday-1 .lineup-band p:nth-child(4), .lineup-container .lineup-friday .lineup-saturday-2 .lineup-band p:nth-child(4), .lineup-container .lineup-friday .lineup-saturday-3 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-friday-1 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-friday-2 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-friday-3 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-saturday-1 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-saturday-2 .lineup-band p:nth-child(4),
+.lineup-container .lineup-saturday .lineup-saturday-3 .lineup-band p:nth-child(4) {
+  padding: 0.1rem 0rem 0.1rem 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Forum", "Georgia", serif;
+  font-size: 18px;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h2 {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+h4 {
+  padding: 0.1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.success {
+  width: 20rem;
+  background-color: rgb(102, 163, 102);
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.fail {
+  width: 20rem;
+  background-color: rgb(216, 88, 88);
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.admin-app-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.admin-app-content .admin-app-question {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 1rem;
+  align-items: center;
+}
+.admin-app-content .admin-app-question h3 {
+  padding: 0.5rem;
+}
+.admin-app-content .admin-app-question button {
+  width: 10rem;
+  height: 2.6rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+  background-color: cadetblue;
+}
+.admin-app-content .admin-app-question button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+/*# sourceMappingURL=app.css.map*/

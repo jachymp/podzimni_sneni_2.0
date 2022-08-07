@@ -1,0 +1,55 @@
+@import '../colors.scss';
+
+// h2 {
+//     background-color: $background_black;
+//     text-align: center;
+//     color: $font_color_cream;
+// }
+
+.lineup-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: $background_black;
+    color: $font_color_cream;
+
+    .lineup-friday,
+    .lineup-saturday {
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .lineup-friday-1, .lineup-friday-2, .lineup-friday-3,
+        .lineup-saturday-1, .lineup-saturday-2, .lineup-saturday-3 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 0.5rem;
+
+            .lineup-band {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                p:nth-child(1) {
+                    padding: 0.1rem;
+                }
+
+                p:nth-child(2) {
+                    padding: 0.1rem;
+                }
+
+                p:nth-child(3) {
+                    padding: 0.1rem;
+                }
+
+                p:nth-child(4) {
+                    padding: 0.1rem 0rem 0.1rem 1rem;
+                }
+            }
+        }
+    }
+}

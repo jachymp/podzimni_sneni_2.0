@@ -1,0 +1,106 @@
+@import '../colors.scss';
+
+.content-container {
+    background-color: $background_black;
+}
+
+.fest-description-container {
+
+    color: $font_color_cream;
+    text-align: center;
+
+    .fest-description {
+        margin: 1rem;
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .description-dates-container {
+        display: flex;
+        justify-content: center;
+
+        p {
+            padding: 0rem 0.2rem 0rem 0.2rem;
+            font-size: 1.2rem;
+        }
+
+    }
+
+    #description-prices {
+        padding: 1rem;
+
+        .description-price-container {
+        display: grid;
+        grid-template-columns: 4rem 5rem 5rem;
+        grid-template-rows: 1.4rem 1.4rem 1.4rem 1.4rem;
+        justify-content: center;
+
+        padding: 1rem;
+        grid-template-areas:
+            ". norm std"
+            "fr fr-norm fr-std"
+            "st st-norm st-std"
+            "all all-norm all-std";
+
+            h4, p {
+                padding: 0.2rem;
+                text-align: left;
+            }
+
+            .price-head-norm {
+                grid-area: norm;
+                border-left: 1px $font_color_cream solid;
+            }
+
+            .price-head-std {
+                grid-area: std;
+            }
+
+            .price-friday-head {
+                grid-area: fr;
+                border-top: 1px $font_color_cream solid;
+            }
+
+            .price-friday-norm {
+                grid-area: fr-norm;
+                border-top: 1px $font_color_cream solid;
+                border-left: 1px $font_color_cream solid;
+            }
+
+            .price-friday-std {
+                grid-area: fr-std;
+                border-top: 1px $font_color_cream solid;
+            }
+
+            .price-saturday-head {
+                grid-area: st;
+
+            }
+
+            .price-saturday-norm {
+                grid-area: st-norm;
+                border-left: 1px $font_color_cream solid;
+            }
+
+            .price-saturday-std {
+                grid-area: st-std;
+            }
+
+            .price-all-head {
+                grid-area: all;
+
+            }
+
+            .price-all-norm {
+                grid-area: all-norm;
+                border-left: 1px $font_color_cream solid;
+            }
+
+            .price-all-std {
+                grid-area: all-std;
+            }
+        }
+    }
+}

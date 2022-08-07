@@ -1,0 +1,79 @@
+version: '3'
+services:
+
+    # PHP 8
+    laravel_php:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: laravel_php/latest
+        container_name: c_laravel_php
+        restart: unless-stopped
+        tty: true
+        environment:
+            SERVICE_NAME: laravel_php
+            SERVICE_TAGS: dev
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+            - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - laravel_app
+
+    # Nginx Service
+    nginx:
+        image: nginx:alpine
+        container_name: c_nginx
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "8000:80"
+        volumes:
+            - .:/var/www
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - laravel_app
+        depends_on:
+            - mysql
+            - laravel_php
+
+    # Node Service
+#    node_alpine:
+#        image: node:alpine
+#        container_name: c_node_alpine
+#        restart: unless-stopped
+#        tty: true
+#        volumes:
+#            - ./:/var/www
+#        networks:
+#            - laravel_app
+#        depends_on:
+#            - mysql
+#            - laravel_php
+
+    # MySQL Services
+    mysql:
+        image: mysql
+        container_name: c_mysql
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+        volumes:
+            - dbdata:/var/lib/mysql/
+            - ./mysql/my.cnf:/etc/mysql/my.cnf
+        networks:
+            - laravel_app
+
+#Docker Networks
+networks:
+    laravel_app:
+        driver: bridge
+#Volumes
+volumes:
+    dbdata:
+        driver: local
