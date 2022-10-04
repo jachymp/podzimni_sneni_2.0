@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Vrstva_1" data-name="Vrstva 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.68 346.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <line class="cls-1" x1="73.19" y1="73.66" x2="113.48" y2="121.4"/>
+  <line class="cls-1" x1="73.19" y1="105.54" x2="113.48" y2="153.28"/>
+  <line class="cls-1" x1="73.19" y1="137.41" x2="113.48" y2="185.15"/>
+  <line class="cls-1" x1="73.19" y1="169.28" x2="113.48" y2="217.02"/>
+  <line class="cls-1" x1="73.19" y1="201.15" x2="113.48" y2="248.9"/>
+  <line class="cls-1" x1="73.19" y1="233.03" x2="113.48" y2="280.77"/>
+</svg>
