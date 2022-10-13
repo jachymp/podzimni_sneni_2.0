@@ -13,6 +13,7 @@ class HomeController extends Controller
         $description = Year::orderBy('id', "desc")->first();
         $bands = LineUp::with('place')
             ->where('year_id', $description->id)
+            ->where('support', null)
             ->orderBy('rank', 'desc')
             ->get();
         $lineupF = LineUp::with('place')
@@ -27,8 +28,18 @@ class HomeController extends Controller
             ->orderBy('night_order', 'asc')
             ->orderBy('time_from', 'asc')
             ->get();
+        $supportSat = LineUp::where('support', 1)
+                ->where('year_id', $description->id)
+                ->where('day', 'Sobota')
+                ->orderBy('time_from', 'asc')
+                ->get();
+        $supportSun = LineUp::where('support', 1)
+            ->where('year_id', $description->id)
+            ->where('day', 'Neděle')
+            ->orderBy('time_from', 'asc')
+            ->get();
 
         return view('home/index',
-            compact("description", "bands", "lineupF", "lineupS"));
+            compact("description", "bands", "lineupF", "lineupS", "supportSat", "supportSun"));
     }
 }

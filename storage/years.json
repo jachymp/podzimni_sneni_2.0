@@ -1,0 +1,36 @@
+[
+    {
+        "name": 2021,
+        "grade": "vol. 10",
+        "from": "2021-11-05",
+        "to": "2021-11-07",
+        "fest_description": "Po desáté, po druhé v Bělči, vlna nekompromisní muziky napříč žánry, podzimní pohoda, setkání. KAPELY/PROJEKCE/OPEN MIC/DJs/SAUNA/POEZIE/FILM",
+        "fest_price_friday": 250,
+        "fest_price_saturday": 350,
+        "fest_price_all": 450,
+        "fest_price_friday_student": 200,
+        "fest_price_saturday_student": 300,
+        "fest_price_all_student": 350,
+        "lineup_public": 0,
+        "accomodation_link": "https://www.google.com",
+        "ticket_link": "https://www.seznam.com"
+    },
+    {
+        "name": 2022,
+        "grade": "vol. 11",
+        "from": "2021-11-04",
+        "to": "2021-11-06",
+        "fest_description": "BLA BLA BLA",
+        "fest_price_friday": 450,
+        "fest_price_saturday": 500,
+        "fest_price_all": 600,
+        "fest_price_friday_student": 350,
+        "fest_price_saturday_student": 400,
+        "fest_price_all_student": 450,
+        "lineup_public": 0,
+        "accomodation_link": "https://www.google.com",
+        "ticket_link": "https://www.seznam.com"
+    }
+
+]
+

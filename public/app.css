@@ -1,13 +1,13 @@
 * {
     box-sizing: border-box;
-    text-align: center;
-    font-size: 18px;
+    font-family: 'Inter', 'Arial', sans;
 }
 
 body {
     background: rgb(229,225,215);
     color: rgb(33,33,33);
     margin: 0;
+    padding: 0;
 }
 
 a {
@@ -19,6 +19,7 @@ h2 {
     font-weight: bold;
     font-size: 34px;
     margin: 1rem;
+    text-align: center;
 }
 
 h3 {
@@ -32,82 +33,91 @@ h4 {
 }
 
 /*HEADER*/
-.intro {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 6rem;
-}
 
-.intro-header {
+.navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     position: fixed;
-    top: 0;
-    border-bottom: 2px dashed rgb(33,33,33);
     background-color: rgba(229,225,215,1);
+    border-bottom: 2px dashed rgb(33,33,33);
 }
 
-.intro-header--left {
-    width: 30%;
+.logo-name {
     display: flex;
+    width: 60%;
     align-items: center;
 }
 
-.intro-header--left img {
+.logo-name  img {
     max-width: 7rem;
+    margin: 1rem;
 }
 
-.intro-header--left p {
-    font-size: 18px;
+.brand-title {
+    font-size: 2rem;
+    margin: 0.5rem;
 }
 
-.intro-header--right {
-    width: 30%;
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
     display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a  {
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    font-size: 1.5rem;
+}
+
+.navbar-links li:hover {
+    background-color: pink;
+    border-radius: 5px;
+    border: 2px solid rgb(33,33,33);
+
+}
+
+.toggle-button {
+    position: absolute;
+    top: 2.5em;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    width: 7%;
+    height: 40px;
+    color: rgb(33,33,33);
 }
 
-.intro-header--right div {
-    width: 33%;
-}
-
-.intro-header--right div:hover {
-    font-weight: bold;
-    align-items: center;
-}
-
-/*RESPONSIVE MENU*/
-input[type=checkbox] {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    font-size: 5rem;
-    user-select: none;
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(33,33,33);
+    border-radius: 5px;
 }
 
 .intro-desc {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-/*    position: center;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    left: 0;*/
-/*    right: 0;*/
+    text-align: center;
+    font-size: 1.5rem;
 
 }
 .forest {
-    height: 12rem;
-    padding-top: 0.2rem;
+    height: 20rem;
     background-image: url("img/PS-les1.jpg" );
 }
 
 .intro-desc p:nth-of-type(1) {
-    margin: 2rem 7rem 2rem 7rem;
+    margin: 2rem 5rem 2rem 5rem;
 }
 
 .intro-desc p:nth-of-type(2) {
@@ -115,24 +125,49 @@ input[type=checkbox] {
     font-weight: bold;
 }
 
+.book-buttons {
+    display: flex;
+    justify-content: center;
+    height: 3.5rem;
+    column-gap: 2rem;
+}
+
+.book-buttons button {
+    width: 17rem;
+    border-radius: 5px;
+    background-color: rgb(229,225,215);
+    font-size: 1.5rem;
+}
+
+.book-buttons button:hover {
+    cursor: pointer;
+    background-color: pink;
+    font-weight: bold;
+}
+
 .free-pic {
-    width: 10%;
+    height: 5rem;
+    width: 100%;
+    text-align: right;
 }
 
     /*PRICELIST*/
 .fr {
     grid-area: patek;
     font-weight: bold;
+    text-align: center;
 }
 
 .st {
     grid-area: sobota;
     font-weight: bold;
+    text-align: center;
 }
 
 .all {
     grid-area: cely;
     font-weight: bold;
+    text-align: center;
 }
 
 .student {
@@ -143,14 +178,17 @@ input[type=checkbox] {
 
 .student-fr {
     grid-area: student-patek;
+    text-align: center;
 }
 
 .student-st {
     grid-area: student-sobota;
+    text-align: center;
 }
 
 .student-all {
     grid-area: student-cely;
+    text-align: center;
 }
 
 .normal {
@@ -161,21 +199,26 @@ input[type=checkbox] {
 
 .normal-fr {
     grid-area: norm-patek;
+    text-align: center;
 }
 
 .normal-st {
     grid-area: norm-sobota;
+    text-align: center;
 }
 
 .normal-all {
     grid-area: norm-cely;
+    text-align: center;
 }
 .pricelist {
     display: grid;
     margin: 1rem;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 6rem 6rem 6rem 6rem;
+    gap: 0.5rem;
+    grid-template-columns: 7rem 6rem 6rem 6rem;
     grid-template-rows: 2rem 2rem 2rem;
     grid-template-areas:
         " . patek sobota cely"
@@ -275,9 +318,9 @@ input[type=checkbox] {
 }
 
 /*LINEUP*/
-.lineup-container {
+.lineup-container, .support {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .lineup-container h4, h3 {
@@ -285,11 +328,11 @@ input[type=checkbox] {
 }
 
 .lineup-friday {
-    width: 20%;
+    width: 30%;
 }
 
 .lineup-saturday {
-    width: 20%;
+    width: 30%;
 }
 
 .place-item {
@@ -301,11 +344,22 @@ input[type=checkbox] {
 }
 
 .lines-pic {
-    width: 10%;
+    width: 5%;
 }
 
 .star-pic {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.star-pic img {
     width: 2%;
+}
+
+.support {
+    padding-bottom: 3rem;
 }
 
 /*FOOTER*/
@@ -314,6 +368,7 @@ footer {
     background-color: rgb(33,33,33);
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 footer p {
@@ -352,23 +407,109 @@ span {
 }
 
 /*RESPONSIVITY*/
-/*line up*/
-@media screen and (max-width: 2200px) {
+/*MENU*/
+@media (max-width: 800px) {
+    .logo-name h1 {
+        font-size: 20px;
+    }
+    .logo-name {
+        width: 80%;
+    }
+    .toggle-button {
+        display: flex;
+        justify-content: space-evenly;
+    }
 
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
 }
 
-/*NAVBAR*/
-@media screen and (max-width: 900px) {
-    .intro-header--right {
-        display: none;
-    }
-
-    input[type=checkbox]:checked ~ .intro-header {
-        background-color: pink;
-    }
-
-    .hamburger {
+@media (max-width: 1100px) {
+    .lineup-container, .support {
         display: block;
+        text-align: center;
+    }
+
+    .lineup-container h4, h3 {
+        text-align: center;
+    }
+
+    .lineup-friday {
+        width: 100%;
+    }
+
+    .lineup-saturday {
+        width: 100%;
+    }
+
+    .place-item {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 1rem;
+        column-gap: 0;
+    }
+
+    .place-item p {
+        width: 5rem;
+        text-align: left;
+    }
+
+    .place-item p:nth-child(3) {
+        width: 15rem;
+    }
+
+    .lines-pic {
+        width: 10%;
+        transform: rotate(90deg);
+    }
+
+    .star-pic img {
+        width: 5%;
+    }
+}
+
+@media (max-width: 700px) {
+    .pricelist {
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .book-buttons {
+        flex-direction: column;
+        height: 10rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .book-buttons button {
+        height: 4rem;
     }
 }
 

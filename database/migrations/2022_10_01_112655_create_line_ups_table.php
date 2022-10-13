@@ -25,7 +25,8 @@ return new class extends Migration
             $table->string('link')->nullable();
             $table->foreignId('place_id')->nullable();
             $table->foreignId('year_id');
-            $table->integer('rank')->nullable();;
+            $table->integer('rank')->nullable();
+            $table->boolean('support')->nullable();
             $table->timestamps();
         });
     }

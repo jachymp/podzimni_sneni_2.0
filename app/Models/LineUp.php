@@ -9,7 +9,7 @@ class LineUp extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'date', 'time_from', 'time_to', 'description', 'place_id', 'link', 'year_id', 'rank'];
+    protected $fillable = ['name', 'date', 'day', 'time_from', 'time_to', 'description', 'place_id', 'link', 'year_id', 'rank', 'support'];
 
     public function year()
     {

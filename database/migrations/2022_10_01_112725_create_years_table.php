@@ -27,6 +27,8 @@ return new class extends Migration
             $table->integer('fest_price_saturday_student')->nullable();
             $table->integer('fest_price_all_student')->nullable();
             $table->boolean('lineup_public')->nullable();
+            $table->string('accomodation_link')->nullable();
+            $table->string('ticket_link')->nullable();
             $table->timestamps();
         });
     }

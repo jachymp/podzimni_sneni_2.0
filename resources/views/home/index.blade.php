@@ -1,32 +1,49 @@
 @extends('layout/main')
 
 @section('content')
+  <nav class="navbar">
+      <div class="logo-name">
+          <img src="img/PS_2022_motivy-13.svg" alt="sneni">
+          <h1 class="brand-title">Podzimní snění {{$description->grade}}</h1>
+      </div>
+      <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </a>
+      <div class="navbar-links">
+          <ul>
+              <li><a href="#intro">O festivalu</a></li>
+              <li><a href="#bands-section">Kapely</a></li>
+              <li><a href="#lineup-section">Program</a></li>
+          </ul>
+      </div>
 
-  UVOD
-    <div id="intro">
-       <div class="intro-header">
-           <div class="intro-header--left">
-               <img src="img/PS_2022_motivy-13.svg" alt="sneni">
-               <h1>Podzimní snění {{$description->grade}}</h1>
-           </div>
-           <div intro-header--mobile>
-               <input type="checkbox" id="checkbox_toogle"/>
-               <label for="checkbox_toogle" class="hamburger">&#9776;</label>
-           </div>
-          <div class="intro-header--right">
-              <div><a href="#intro">O festivalu</a></div>
-              <div><a href="#bands-section">Kapely</a></div>
-              <div><a href="#lineup-section">Line up</a></div>
-          </div>
-       </div>
-    </div>
+  </nav>
 
+  <script>
+      const toggleButton = document.getElementsByClassName('toggle-button')[0];
+      const navBarLinks = document.getElementsByClassName('navbar-links')[0];
 
-       <div class="intro-desc">
+      toggleButton.addEventListener('click', () => {
+          navBarLinks.classList.toggle('active')
+      })
+  </script>
+
+       <div id="intro" class="intro-desc">
            <div class="forest"></div>
            <p>{{$description->fest_description}}</p>
            <p>{{date('d. m. Y', strtotime($description->from))}} - {{date('d. m. Y', strtotime($description->to))}}</p>
        </div>
+
+        <div class="book-buttons">
+            @if ($description->ticket_link)
+            <button><a href={{$description->ticket_link}} target="_blank">Kup si lístek</a></button>
+            @endif
+            @if ($description->accomodation_link)
+            <button><a href={{$description->accomodation_link}} target="_blank">Zarezervuj si chatku</a></button>
+            @endif
+        </div>
 
         <img class="free-pic" src="img/PS_2022_motivy-06.svg" alt="vlnka">
 
@@ -35,16 +52,16 @@
            <div class="st">Sobota</div>
            <div class="all">Celý</div>
            <div class="student">Student</div>
-           <div class="student-fr">{{$description->fest_price_friday_student}}</div>
-           <div class="student-st">{{$description->fest_price_saturday_student}}</div>
-           <div class="student-all">{{$description->fest_price_all_student}}</div>
+           <div class="student-fr">{{$description->fest_price_friday_student}} Kč</div>
+           <div class="student-st">{{$description->fest_price_saturday_student}} Kč</div>
+           <div class="student-all">{{$description->fest_price_all_student}} Kč</div>
            <div class="normal">Bez slevy</div>
-           <div class="normal-fr">{{$description->fest_price_friday}}</div>
-           <div class="normal-st">{{$description->fest_price_saturday}}</div>
-           <div class="normal-all">{{$description->fest_price_all}}</div>
+           <div class="normal-fr">{{$description->fest_price_friday}} Kč</div>
+           <div class="normal-st">{{$description->fest_price_saturday}} Kč</div>
+           <div class="normal-all">{{$description->fest_price_all}} Kč</div>
        </div>
 
-    <img id="bands-section" class="free-pic" src="img/PS_2022_motivy-07.svg" alt="vlnka">
+        <img class="free-pic" id="bands-section" src="img/PS_2022_motivy-07.svg" alt="vlnka">
 
 
 {{-- KAPELY --}}
@@ -165,9 +182,38 @@
              <img class="lines-pic" src="img/PS_2022_motivy-11.svg">
          </div>
      </div>
-    <img class="star-pic" src="img/PS_2022_motivy-04.svg">
-    <img class="star-pic" src="img/PS_2022_motivy-04.svg">
-    <img class="star-pic" src="img/PS_2022_motivy-04.svg">
+  <div class="star-pic">
+      <img src="img/PS_2022_motivy-04.svg">
+      <img src="img/PS_2022_motivy-04.svg">
+      <img src="img/PS_2022_motivy-04.svg">
+  </div>
+
+  <h2>Doprovodný program</h2>
+  <div class="support">
+      <img class="lines-pic" src="img/PS_2022_motivy-09.svg">
+      <div class="support-saturday">
+          <h3>Pátek</h3>
+          @foreach($supportSat as $supSat)
+              <div class="place-item">
+                  <p>{{$supSat->time_from}}</p>
+                  <p>{{$supSat->time_to}}</p>
+                  <p>{{$supSat->name}}</p>
+              </div>
+          @endforeach
+      </div>
+      <div class="support-sunday">
+          <h3>Neděle</h3>
+          @foreach($supportSun as $supSun)
+              <div class="place-item">
+                  <p>{{$supSun->time_from}}</p>
+                  <p>{{$supSun->time_to}}</p>
+                  <p>{{$supSun->name}}</p>
+              </div>
+          @endforeach
+      </div>
+      <img class="lines-pic" src="img/PS_2022_motivy-09.svg">
+  </div>
+
 <footer>
     <p>Vytvořeno s <span>&#10084;</span> pro všechny ještěry!</p>
     <div class="footer">
@@ -177,6 +223,9 @@
             </a>
             <a href="https://www.facebook.com/podzimnisneni" target="_blank">
                 <img src="img/facebook.png">
+            </a>
+            <a href="https://www.instagram.com/podzimni_sneni/" target="_blank">
+                <img src="img/instagram.png">
             </a>
         </div>
     </div>
