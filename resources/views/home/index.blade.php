@@ -4,7 +4,7 @@
   <nav class="navbar">
       <div class="logo-name">
           <img src="img/PS_2022_motivy-13.svg" alt="sneni">
-          <h1 class="brand-title">Podzimní snění {{$description->grade}}</h1>
+          <h1 class="brand-title">{{$description->grade}}. PODZIMNÍ SNĚNÍ</h1>
       </div>
       <a href="#" class="toggle-button">
           <span class="bar"></span>
@@ -38,15 +38,16 @@
 
         <div class="book-buttons">
             @if ($description->ticket_link)
-            <button><a href={{$description->ticket_link}} target="_blank">Kup si lístek</a></button>
+            <button><a href={{$description->ticket_link}} target="_blank">kup si lístek</a></button>
             @endif
             @if ($description->accomodation_link)
-            <button><a href={{$description->accomodation_link}} target="_blank">Zarezervuj si chatku</a></button>
+            <button><a href={{$description->accomodation_link}} target="_blank">zarezervuj si chatku</a></button>
             @endif
         </div>
 
         <img class="free-pic" src="img/PS_2022_motivy-06.svg" alt="vlnka">
 
+        <h2>ceník</h2>
        <div class="pricelist">
            <div class="fr">Pátek</div>
            <div class="st">Sobota</div>
@@ -66,7 +67,7 @@
 
 {{-- KAPELY --}}
     <div>
-        <h2>Kapely</h2>
+        <h2>kapely</h2>
         <div class="band-card-container">
         @foreach($bands as $index => $band)
             <div id="band-card" class="band-card--heading" onclick=setClass({{$index}})>
@@ -110,70 +111,70 @@
 
 {{-- LINEUP --}}
      <div id="lineup-section">
-         <h2>Line up</h2>
+         <h2>line up</h2>
          <div class="lineup-container">
              <img class="lines-pic" src="img/PS_2022_motivy-10.svg">
              <div class="lineup-friday">
-                 <h3>Pátek</h3>
-                     <h4>Jídelna</h4>
+                 <h3>pátek</h3>
+                     <h4>jídelna</h4>
                      @foreach($lineupF as $lineup)
                          @if($lineup->place->name == 'Jídelna')
                          <div class="place-item">
-                             <p>{{$lineup->time_from}}</p>
-                             <p>{{$lineup->time_to}}</p>
+                             <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                             <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
                          @endif
                      @endforeach
-                     <h4>Sedmík</h4>
+                     <h4>sedmík</h4>
                      @foreach($lineupF as $lineup)
                          @if($lineup->place->name == 'Sedmík')
                          <div class="place-item">
-                             <p>{{$lineup->time_from}}</p>
-                             <p>{{$lineup->time_to}}</p>
+                             <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                             <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
                          @endif
                      @endforeach
-                     <h4>Modul</h4>
+                     <h4>modul</h4>
                      @foreach($lineupF as $lineup)
                          @if($lineup->place->name == 'Modul')
                          <div class="place-item">
-                             <p>{{$lineup->time_from}}</p>
-                             <p>{{$lineup->time_to}}</p>
+                             <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                             <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
                          @endif
                      @endforeach
              </div>
              <div class="lineup-saturday">
-                 <h3>Sobota</h3>
-                 <h4>Jídelna</h4>
+                 <h3>sobota</h3>
+                 <h4>jídelna</h4>
                      @foreach($lineupS as $lineup)
                          @if($lineup->place->name == 'Jídelna')
                              <div class="place-item">
-                                 <p>{{$lineup->time_from}}</p>
-                                 <p>{{$lineup->time_to}}</p>
+                                 <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                                 <p>{{substr($lineup->time_to, 0, -3)}}</p>
                                  <p>{{$lineup->name}}</p>
                              </div>
                          @endif
                      @endforeach
-                     <h4>Sedmík</h4>
+                     <h4>sedmík</h4>
                      @foreach($lineupS as $lineup)
                          @if($lineup->place->name == 'Sedmík')
                          <div class="place-item">
-                             <p>{{$lineup->time_from}}</p>
-                             <p>{{$lineup->time_to}}</p>
+                             <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                             <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
                          @endif
                      @endforeach
-                     <h4>Modul</h4>
+                     <h4>modul</h4>
                      @foreach($lineupS as $lineup)
                          @if($lineup->place->name == 'Modul')
                          <div class="place-item">
-                             <p>{{$lineup->time_from}}</p>
-                             <p>{{$lineup->time_to}}</p>
+                             <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                             <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
                          @endif
@@ -188,25 +189,25 @@
       <img src="img/PS_2022_motivy-04.svg">
   </div>
 
-  <h2>Doprovodný program</h2>
+  <h2>doprovodný program</h2>
   <div class="support">
       <img class="lines-pic" src="img/PS_2022_motivy-09.svg">
       <div class="support-saturday">
-          <h3>Pátek</h3>
+          <h3>sobota</h3>
           @foreach($supportSat as $supSat)
               <div class="place-item">
-                  <p>{{$supSat->time_from}}</p>
-                  <p>{{$supSat->time_to}}</p>
+                  <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                  <p>{{substr($lineup->time_to, 0, -3)}}</p>
                   <p>{{$supSat->name}}</p>
               </div>
           @endforeach
       </div>
       <div class="support-sunday">
-          <h3>Neděle</h3>
+          <h3>neděle</h3>
           @foreach($supportSun as $supSun)
               <div class="place-item">
-                  <p>{{$supSun->time_from}}</p>
-                  <p>{{$supSun->time_to}}</p>
+                  <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                  <p>{{substr($lineup->time_to, 0, -3)}}</p>
                   <p>{{$supSun->name}}</p>
               </div>
           @endforeach

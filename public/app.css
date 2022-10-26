@@ -17,8 +17,8 @@ a {
 
 h2 {
     font-weight: bold;
-    font-size: 34px;
-    margin: 1rem;
+    font-size: 36px;
+    margin: 1.5rem;
     text-align: center;
 }
 
@@ -64,6 +64,7 @@ h4 {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: flex-start;
 }
 
 .navbar-links li {
@@ -111,6 +112,7 @@ h4 {
     font-size: 1.5rem;
 
 }
+
 .forest {
     height: 20rem;
     background-image: url("img/PS-les1.jpg" );
@@ -128,27 +130,31 @@ h4 {
 .book-buttons {
     display: flex;
     justify-content: center;
-    height: 3.5rem;
+    height: 3rem;
     column-gap: 2rem;
+    margin: 2rem;
 }
 
 .book-buttons button {
-    width: 17rem;
-    border-radius: 5px;
-    background-color: rgb(229,225,215);
-    font-size: 1.5rem;
+    width: 15rem;
+    background-color: rgb(33,33,33);
+    font-size: 1.2rem;
+}
+
+.book-buttons button a {
+    color: rgb(229,225,215);
 }
 
 .book-buttons button:hover {
     cursor: pointer;
-    background-color: pink;
     font-weight: bold;
 }
 
 .free-pic {
-    height: 5rem;
+    height: 8rem;
     width: 100%;
     text-align: right;
+    margin: 2rem 0 2rem 0;
 }
 
     /*PRICELIST*/
@@ -214,7 +220,7 @@ h4 {
 .pricelist {
     display: grid;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -408,7 +414,7 @@ span {
 
 /*RESPONSIVITY*/
 /*MENU*/
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .logo-name h1 {
         font-size: 20px;
     }
@@ -503,13 +509,13 @@ span {
 @media (max-width: 600px) {
     .book-buttons {
         flex-direction: column;
-        height: 10rem;
+        height: 8rem;
         justify-content: space-between;
         align-items: center;
     }
 
     .book-buttons button {
-        height: 4rem;
+        height: 3rem;
     }
 }
 
