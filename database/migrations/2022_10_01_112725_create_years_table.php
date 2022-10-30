@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('grade');
             $table->date('from')->nullable();
             $table->date('to')->nullable();
-            $table->text('fest_description')->nullable();
+            $table->text('fest_description1')->nullable();
+            $table->text('fest_description2')->nullable();
             $table->integer('fest_price_friday')->nullable();
             $table->integer('fest_price_saturday')->nullable();
             $table->integer('fest_price_all')->nullable();

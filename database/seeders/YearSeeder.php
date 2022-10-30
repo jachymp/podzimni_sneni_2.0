@@ -26,7 +26,7 @@ class YearSeeder extends Seeder
             $year->grade = $yearData->grade;
             $year->from = $yearData->from;
             $year->to = $yearData->to;
-            $year->fest_description = $yearData->fest_description;
+            $year->fest_description1 = $yearData->fest_description;
             $year->fest_price_friday = $yearData->fest_price_friday;
             $year->fest_price_saturday = $yearData->fest_price_saturday;
             $year->fest_price_all = $yearData->fest_price_all;

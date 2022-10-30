@@ -3,7 +3,7 @@
 @section('content')
   <nav class="navbar">
       <div class="logo-name">
-          <img src="img/PS_2022_motivy-13.svg" alt="sneni">
+          <img src="img/PS_2022_motivy-13.svg" alt="sneni" class="main_pic">
           <h1 class="brand-title">{{$description->grade}}. PODZIMNÍ SNĚNÍ</h1>
       </div>
       <a href="#" class="toggle-button">
@@ -13,9 +13,9 @@
       </a>
       <div class="navbar-links">
           <ul>
-              <li><a href="#intro">O festivalu</a></li>
-              <li><a href="#bands-section">Kapely</a></li>
-              <li><a href="#lineup-section">Program</a></li>
+              <li><a href="#intro">o festivalu</a></li>
+              <li><a href="#bands-section">kapely</a></li>
+              <li><a href="#lineup-section">program</a></li>
           </ul>
       </div>
 
@@ -31,8 +31,8 @@
   </script>
 
        <div id="intro" class="intro-desc">
-           <div class="forest"></div>
-           <p>{{$description->fest_description}}</p>
+           <p>{{$description->fest_description1}}</p>
+           <p>{{$description->fest_description2}}</p>
            <p>{{date('d. m. Y', strtotime($description->from))}} - {{date('d. m. Y', strtotime($description->to))}}</p>
        </div>
 
