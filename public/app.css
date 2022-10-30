@@ -439,7 +439,7 @@ span {
         font-size: 20px;
     }
     .logo-name {
-        width: 7rem;
+        max-width: 7rem;
     }
     .toggle-button {
         display: flex;
