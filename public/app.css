@@ -130,7 +130,7 @@ h4 {
     background-color: rgb(33,33,33);
     color: white;
     cursor: pointer;
-    border-radius: 100px;
+    border-radius: 50%;
     font-size: 2rem;
     width: 3rem;
     height: 3rem;
