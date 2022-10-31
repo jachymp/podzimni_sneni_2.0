@@ -30,6 +30,27 @@
       })
   </script>
 
+{{--  SCROLL UP BUTTON--}}
+  <button onclick="goToTop()" id="scrollUp" title="Nahoru">&#8673;</button>
+
+  <script>
+      window.onscroll = function () {scroll()};
+
+      function scroll() {
+          let scrollButton = document.getElementById('scrollUp');
+          if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+              scrollButton.style.display = "block";
+          } else {
+              scrollButton.style.display = "none";
+          }
+      }
+
+      function goToTop() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+      }
+  </script>
+
        <div id="intro" class="intro-desc">
            <p>{{$description->fest_description1}}</p>
            <p>{{$description->fest_description2}}</p>
@@ -80,7 +101,7 @@
                     </div>
                     <div class="band-card--icon">
                         <img src="img/clock.png">
-                        <p>{{$band->time_from}}</p>
+                        <p>{{substr($band->time_from, 0, -3)}}</p>
                     </div>
                     <div class="band-card--icon">
                         <img src="img/pin.png">
@@ -126,14 +147,24 @@
                          </div>
                          @endif
                      @endforeach
-                     <h4>sedmík</h4>
+                     <h4>pelarka</h4>
                      @foreach($lineupF as $lineup)
-                         @if($lineup->place->name == 'Sedmík')
+                         @if($lineup->place->name == 'Pelarka')
                          <div class="place-item">
                              <p>{{substr($lineup->time_from, 0, -3)}}</p>
                              <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
+                         @endif
+                     @endforeach
+                     <h4>sklad</h4>
+                     @foreach($lineupF as $lineup)
+                         @if($lineup->place->name == 'Sklad')
+                             <div class="place-item">
+                                 <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                                 <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                                 <p>{{$lineup->name}}</p>
+                             </div>
                          @endif
                      @endforeach
                      <h4>modul</h4>
@@ -159,14 +190,24 @@
                              </div>
                          @endif
                      @endforeach
-                     <h4>sedmík</h4>
+                     <h4>pelarka</h4>
                      @foreach($lineupS as $lineup)
-                         @if($lineup->place->name == 'Sedmík')
+                         @if($lineup->place->name == 'Pelarka')
                          <div class="place-item">
                              <p>{{substr($lineup->time_from, 0, -3)}}</p>
                              <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
+                         @endif
+                     @endforeach
+                     <h4>sklad</h4>
+                     @foreach($lineupS as $lineup)
+                         @if($lineup->place->name == 'Sklad')
+                             <div class="place-item">
+                                 <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                                 <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                                 <p>{{$lineup->name}}</p>
+                             </div>
                          @endif
                      @endforeach
                      <h4>modul</h4>
@@ -177,6 +218,26 @@
                              <p>{{substr($lineup->time_to, 0, -3)}}</p>
                              <p>{{$lineup->name}}</p>
                          </div>
+                         @endif
+                     @endforeach
+                     <h4>modul</h4>
+                     @foreach($lineupS as $lineup)
+                         @if($lineup->place->name == 'Modul')
+                             <div class="place-item">
+                                 <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                                 <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                                 <p>{{$lineup->name}}</p>
+                             </div>
+                         @endif
+                     @endforeach
+                     <h4>sedmík</h4>
+                     @foreach($lineupS as $lineup)
+                         @if($lineup->place->name == 'Sedmík')
+                             <div class="place-item">
+                                 <p>{{substr($lineup->time_from, 0, -3)}}</p>
+                                 <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                                 <p>{{$lineup->name}}</p>
+                             </div>
                          @endif
                      @endforeach
              </div>
@@ -196,8 +257,8 @@
           <h3>sobota</h3>
           @foreach($supportSat as $supSat)
               <div class="place-item">
-                  <p>{{substr($lineup->time_from, 0, -3)}}</p>
-                  <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                  <p>{{substr($supSat->time_from, 0, -3)}}</p>
+                  <p>{{substr($supSat->time_to, 0, -3)}}</p>
                   <p>{{$supSat->name}}</p>
               </div>
           @endforeach
@@ -206,8 +267,8 @@
           <h3>neděle</h3>
           @foreach($supportSun as $supSun)
               <div class="place-item">
-                  <p>{{substr($lineup->time_from, 0, -3)}}</p>
-                  <p>{{substr($lineup->time_to, 0, -3)}}</p>
+                  <p>{{substr($supSun->time_from, 0, -3)}}</p>
+                  <p>{{substr($supSun->time_to, 0, -3)}}</p>
                   <p>{{$supSun->name}}</p>
               </div>
           @endforeach

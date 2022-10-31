@@ -17,7 +17,7 @@ class PlaceSeeder extends Seeder
     {
         DB::table('places')->truncate();
 
-        $stages = ['Jídelna', 'Sedmík', 'Modul', 'Tábor'];
+        $stages = ['Jídelna', 'Pelarka', 'Modul', 'Tábor', 'Sklad', 'Sedmík'];
 
         foreach($stages as $stage) {
             $place = new Place();

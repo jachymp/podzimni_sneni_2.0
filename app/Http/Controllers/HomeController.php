@@ -14,6 +14,7 @@ class HomeController extends Controller
         $bands = LineUp::with('place')
             ->where('year_id', $description->id)
             ->where('support', null)
+            ->whereNot('place_id', 6)
             ->orderBy('rank', 'desc')
             ->get();
         $lineupF = LineUp::with('place')

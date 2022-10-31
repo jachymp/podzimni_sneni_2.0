@@ -4,7 +4,8 @@
         "grade": "vol. 10",
         "from": "2021-11-05",
         "to": "2021-11-07",
-        "fest_description": "Po desáté, po druhé v Bělči, vlna nekompromisní muziky napříč žánry, podzimní pohoda, setkání. KAPELY/PROJEKCE/OPEN MIC/DJs/SAUNA/POEZIE/FILM",
+        "fest_description1": "Po desáté, po druhé v Bělči, vlna nekompromisní muziky napříč žánry, podzimní pohoda, setkání. KAPELY/PROJEKCE/OPEN MIC/DJs/SAUNA/POEZIE/FILM",
+        "fest_description2": null,
         "fest_price_friday": 250,
         "fest_price_saturday": 350,
         "fest_price_all": 450,
@@ -17,19 +18,20 @@
     },
     {
         "name": 2022,
-        "grade": "vol. 11",
+        "grade": "11",
         "from": "2021-11-04",
         "to": "2021-11-06",
-        "fest_description": "BLA BLA BLA",
-        "fest_price_friday": 450,
-        "fest_price_saturday": 500,
+        "fest_description1": "V rámci festivalu vystoupí nespočet kapel a djs. Těšít se můžete taky na doprovodný program jako projekce filmů, open mic, saunování nebo postávání u hořícího barelu.",
+        "fest_description2": "Festival probíhá v Bělči nad Orlicí v Táboře Jana Ámose Komenského. Tábor je místo skrýté v lesích, s přilehlým rybníkem a spoustou prostoru. Tak neváhej a přijeď.",
+        "fest_price_friday": 400,
+        "fest_price_saturday": 400,
         "fest_price_all": 600,
         "fest_price_friday_student": 350,
-        "fest_price_saturday_student": 400,
-        "fest_price_all_student": 450,
+        "fest_price_saturday_student": 350,
+        "fest_price_all_student": 550,
         "lineup_public": 0,
-        "accomodation_link": "https://www.google.com",
-        "ticket_link": "https://www.seznam.com"
+        "accomodation_link": "https://docs.google.com/forms/d/e/1FAIpQLSfsW72klJlgVTsS6zPzxrb4o71vAkNrxsbwns_6vnly3JO3gQ/viewform",
+        "ticket_link": "https://www.goforboom.com/cs/events/podzimni-sneni-xi"
     }
 
 ]
